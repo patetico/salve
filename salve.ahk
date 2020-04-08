@@ -1,7 +1,14 @@
-#NoEnv
+﻿#NoEnv
 #SingleInstance, force
 #Persistent
 
+IfNotExist, salves
+    FileCreateDir, salves
+If (not InStr(FileExist("salves"), "D"))
+{
+    MsgBox, Mano tem que ter uma pasta com nome salves e não tem então flw
+    ExitApp
+}
 
 FileInstall, salves\salve-01.wav, salves\salve-01.wav
 FileInstall, salves\salve-02.wav, salves\salve-02.wav
